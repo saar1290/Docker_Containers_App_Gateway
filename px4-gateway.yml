@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  px4_gateway:
+    restart: always
+    privileged: true
+    image: registry:5000/app_gateway:latest
+    container_name: px4_gateway
+    ports:
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
